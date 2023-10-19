@@ -80,7 +80,36 @@ if (isMinor) {
 }
 
 if (is30yearsOld) {
-    console.log('Paul a 30 ans')
+    // console.log('Paul a 30 ans')
 } else {
-    console.log(`Paul n'a pas 30 ans`)
+    // console.log(`Paul n'a pas 30 ans`)
+}
+
+const bigNb1 = 400
+const bigNb2 = 400
+
+// écrire la condition pour afficher le plus grand nombre
+
+// const resultComparison = bigNb1 > bigNb2
+
+// console.log(resultComparison)
+
+if (bigNb1 > bigNb2) {
+    console.log(bigNb1)
+} else if (bigNb1 < bigNb2) {
+    console.log(bigNb2)
+} else if (bigNb1 == bigNb2) {
+    console.log(bigNb1, bigNb2)
+}
+
+const firstname = "Olivier"
+// const firstname2 = "Hamid"
+// const firstname3 = "Pauline"
+
+if (firstname == "Hamid") {
+    console.log('bonjour mon cher ' + firstname)
+} else if (firstname == "Pauline") {
+    console.log('bonjour ma chère ' + firstname)
+} else {
+    console.log('bonjour ' + firstname + ', je ne connaissais pas ton prénom avant')
 }
