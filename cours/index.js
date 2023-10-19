@@ -111,5 +111,5 @@ if (firstname == "Hamid") {
 } else if (firstname == "Pauline") {
     console.log('bonjour ma chère ' + firstname)
 } else {
-    console.log('bonjour ' + firstname + ', je ne connaissais pas ton prénom avant')
+    console.log(`Bonjour ${firstname}, je ne connaissais pas ton prénom avant`);
 }
