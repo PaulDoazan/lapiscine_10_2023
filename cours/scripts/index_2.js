@@ -121,6 +121,7 @@ function addUserInArray(user) {
     }
 }
 
+
 // console.log(administrators)
 
 // Créer une fonction qui prend en paramètre un objet utilisateur et qui affiche en console "Bonjour ${nom} !"
@@ -156,21 +157,81 @@ function buildSentence(user1, user2) {
     console.log(`Bonjour ${user1.name} et ${user2.name}`)
 }
 
-
 const town1 = {
     name: 'Bordeaux',
     population: 300000,
-    superficy: 50
+    superficy: 50,
+    twinnings: ['Berlin', 'Londres', 'Madrid', 'Libourne']
 }
 
 const town2 = {
     name: 'Lyon',
     population: 500000,
-    superficy: 48
+    superficy: 48,
+    twinnings: ['Berlin', 'Londres', 'Madrid', 'Libourne', 'Rennes', 'Varsovie']
 }
 
 const town3 = {
     name: 'Paris',
     population: 2000000,
-    superficy: 105
+    superficy: 105,
+    twinnings: ['Berlin', 'Londres', 'Madrid', 'Libourne', 'Rochefort']
 }
+
+// Ecrire une fonction qui prend 2 paramètres, et qui affiche dans la console, le nom de la ville la plus peuplée des deux
+
+const biggerTown = compareTowns(town2, town3)
+
+console.log(biggerTown.name)
+
+function compareTowns(city1, city2) {
+    if (city1.population > city2.population) {
+        return city1
+    } else {
+        return city2
+    }
+}
+
+
+// Ecrire la fonction qui retourne la somme de 2 paramètres
+
+const nb1 = 5
+const nb2 = 7
+const nb3 = 2
+const nb4 = 4
+const nb5 = 8
+
+const sum1 = addTwoParameters(nb1, nb2)
+const sum2 = addTwoParameters(nb4, nb2)
+const sum3 = addTwoParameters(nb1, nb5)
+const sum4 = addTwoParameters(nb5, nb2)
+const sum5 = addTwoParameters(nb1, nb3)
+
+function addTwoParameters(a, b) {
+    return a + b
+}
+
+// console.log(`Le résultat de la somme de ${nb1} et ${nb2} est égal à ${sum1}`)
+
+
+const val = 15;
+const res = addValue(3)
+
+// console.log(res);
+
+function addValue(param) {
+    return param + val;
+}
+
+
+// Ecrire la fonction qui retourne le produit des 2 paramètres
+
+const r = productOfParameters(2, 6)
+console.log(r) // ==> 24
+
+function productOfParameters(p1, p2) {
+    return p1 * p2
+}
+
+
+// Variante exercices avec les towns, écrire la fonction qui compare 2 villes en paramètres et qui me retourne celle qui a le plus de jumelages.
