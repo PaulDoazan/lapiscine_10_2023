@@ -78,19 +78,27 @@ let administrators = ['Paul', 'Pierre', 'Mathilde']
 // Ajouter utilisateur si la propriété admin est true
 const newAdmin1 = {
     name: 'Marianne',
-    admin: true
+    admin: true,
+    gender: "f"
 }
 
 const newAdmin2 = {
     name: 'Sophie',
-    admin: false
+    admin: false,
+    gender: "f"
 }
 
 const newAdmin3 = {
     name: 'Lucie',
-    admin: true
+    admin: true,
+    gender: "f"
 }
 
+const newAdmin4 = {
+    name: 'Etienne',
+    admin: true,
+    gender: "m"
+}
 // if (newAdmin1.admin) {
 //     administrators.push(newAdmin1.name)
 // }
@@ -119,9 +127,50 @@ function addUserInArray(user) {
 
 // Ex : Bonjour Lucie !
 
-displayName(newAdmin1)
-displayName(newAdmin3)
+// displayName(newAdmin1)
+// displayName(newAdmin2)
+// displayName(newAdmin4)
 
 function displayName(param) {
-    console.log(`Bonjour ${param.name} !`)
+    let strResult = 'Bonjour '
+
+    if (param.admin) {
+        if (param.gender == 'f') {
+            strResult += 'administratrice '
+        } else if (param.gender == 'm') {
+            strResult += 'administrateur '
+        }
+    }
+
+    strResult += param.name + ' !'
+
+    console.log(strResult)
+}
+
+// Ajouter une condition pour afficher Bonjour administratrice ... ! si la propriété admin est true
+
+// Créer une fonction à 2 paramètres qui affiche Bonjour Sophie et Lucie par exemple
+// buildSentence(newAdmin1, newAdmin4)
+
+function buildSentence(user1, user2) {
+    console.log(`Bonjour ${user1.name} et ${user2.name}`)
+}
+
+
+const town1 = {
+    name: 'Bordeaux',
+    population: 300000,
+    superficy: 50
+}
+
+const town2 = {
+    name: 'Lyon',
+    population: 500000,
+    superficy: 48
+}
+
+const town3 = {
+    name: 'Paris',
+    population: 2000000,
+    superficy: 105
 }
