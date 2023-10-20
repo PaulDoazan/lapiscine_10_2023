@@ -1,4 +1,4 @@
-let arrExample = [3, 5, 8, 12]
+let arrExample = [3, 5, 8, 12, 2, 43, 21, 2, 3, 42, 2, 5, 12, 555, 2, 43, 21, 2, 42, 2, 5, 12, 434]
 
 let readFirstElement = true;
 
@@ -15,5 +15,6 @@ let objExample = {
     prop2: 3
 }
 
-console.log(objExample.prop1)
+console.log(arrExample.length / 2, arrExample[arrExample.length / 2])
 
+// Récupérer l'élément du tableau placé au milieu du tableau à l'aide de la propriété .length du tableau
