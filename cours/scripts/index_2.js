@@ -15,6 +15,21 @@ let objExample = {
     prop2: 3
 }
 
-console.log(arrExample.length / 2, arrExample[arrExample.length / 2])
+// console.log(arrExample.length / 2, arrExample[arrExample.length / 2])
 
 // Récupérer l'élément du tableau placé au milieu du tableau à l'aide de la propriété .length du tableau
+
+// solution alternative
+// let middleIndex = Math.round(arrExample.length / 2);
+
+let middleIndex;
+
+if (arrExample.length % 2 != 0) {
+    middleIndex = (arrExample.length - 1) / 2
+} else {
+    middleIndex = arrExample.length / 2
+}
+
+let elementInTheMiddle = arrExample[middleIndex]
+
+console.log(elementInTheMiddle)
