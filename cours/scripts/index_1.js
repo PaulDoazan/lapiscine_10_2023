@@ -170,7 +170,7 @@ Je m'appelle Paul Doazan, j'ai 35 ans et j'habite à Talence.
 
 let resultFromObject = `Je m'appelle ${identity.firstname} ${identity.lastname}, j'ai ${identity.age} ans et j'habite ${identity.town}.`
 
-console.log(resultFromObject);
+// console.log(resultFromObject);
 
 // Pour ceux qui ont terminé, créer un deuxième objet identity2, stocker identity et identity2 dans un tableau, et écrire la phrase précédente en utilisant le tableau. 
 
@@ -183,4 +183,5 @@ let identity2 = {
 
 let arrIdentities = [identity, identity2]
 
-arrIdentities[1].lastname
+let resultFromObject2 = `Je m'appelle ${arrIdentities[0].firstname} ${arrIdentities[0].lastname}, j'ai ${arrIdentities[0].age} ans et j'habite ${arrIdentities[0].town} !!!`
+console.log(resultFromObject2)
