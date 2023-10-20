@@ -76,31 +76,52 @@ let administrators = ['Paul', 'Pierre', 'Mathilde']
 
 
 // Ajouter utilisateur si la propriété admin est true
-let newAdmin1 = {
+const newAdmin1 = {
     name: 'Marianne',
     admin: true
 }
 
-let newAdmin2 = {
+const newAdmin2 = {
     name: 'Sophie',
     admin: false
 }
 
-let newAdmin3 = {
+const newAdmin3 = {
     name: 'Lucie',
     admin: true
 }
 
-if () {
-    administrators.push(newAdmin1)
+// if (newAdmin1.admin) {
+//     administrators.push(newAdmin1.name)
+// }
+
+// if (newAdmin2.admin) {
+//     administrators.push(newAdmin2.name)
+// }
+
+// if (newAdmin3.admin) {
+//     administrators.push(newAdmin3.name)
+// }
+
+addUserInArray(newAdmin1)
+addUserInArray(newAdmin2)
+addUserInArray(newAdmin3)
+
+function addUserInArray(user) {
+    if (user.admin) {
+        administrators.push(user.name)
+    }
 }
 
-if () {
-    administrators.push(newAdmin2)
-}
+// console.log(administrators)
 
-if () {
-    administrators.push(newAdmin3)
-}
+// Créer une fonction qui prend en paramètre un objet utilisateur et qui affiche en console "Bonjour ${nom} !"
 
-console.log(administrators)
+// Ex : Bonjour Lucie !
+
+displayName(newAdmin1)
+displayName(newAdmin3)
+
+function displayName(param) {
+    console.log(`Bonjour ${param.name} !`)
+}
