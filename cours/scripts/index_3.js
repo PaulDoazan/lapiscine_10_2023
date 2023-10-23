@@ -15,7 +15,7 @@ const person_1 = {
     name: "Pierre",
     hasCar: true,
     hasBike: true,
-    isSick: false
+    isSick: true
 }
 const person_2 = {
     name: "Mélanie",
@@ -39,12 +39,12 @@ const person_4 = {
 
 // Intégrer le paramètre person aux 2 fonctions pour rendre la chaîne de caractère dynamique
 
-canGoToUniversity(person_4)
-canGoToTopOfMountain(person_1)
+// canGoToUniversity(person_1)
+// canGoToTopOfMountain(person_1)
 
 // Opérateur de comparaison complexe : OR
 function canGoToUniversity(person) {
-    if (person.hasCar || person.hasBike && !person.isSick) {
+    if ((person.hasCar || person.hasBike) && !person.isSick) {
         console.log(`${person.name} peut aller à l'université`)
     } else {
         console.log(`${person.name} ne peut pas aller à l'université`)
@@ -60,3 +60,54 @@ function canGoToTopOfMountain(person) {
         console.log(`${person.name} ne peut pas aller au sommet de la montagne`)
     }
 }
+
+
+/**
+ * LES BOUCLES
+ */
+
+// for (let i = 0; i <= 10; i++) {
+//     console.log('Salut ' + i)
+// }
+
+let arr = [3, 5, 12, 8, 1, 4]
+
+for (let i = 0; i < arr.length; i++) {
+    // console.log('Element courant : ' + arr[i])
+}
+
+// Ajouter un if dans la boucle pour n'afficher que les éléments dont la valeur est >= 5
+
+for (let index = 0; index < arr.length; index++) {
+    if (arr[index] >= 5) {
+        // console.log('Element courant : ' + arr[index])
+    }
+}
+
+
+let numbers = [3, 5, 12, 8, 1, 4]
+
+// écrire une boucle for pour additionner tous les éléments d'un tableau
+
+let sum = 0
+
+for (let ind = 0; ind < numbers.length; ind++) {
+    sum += numbers[ind]
+    // console.log(sum)
+}
+
+
+
+// ==> 33
+
+// A l'aide d'une boucle for, trouver la valeur la plus grande dans le tableau
+let max = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+        max = numbers[i]
+    }
+    console.log(max);
+}
+
+
