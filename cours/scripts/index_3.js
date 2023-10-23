@@ -104,10 +104,39 @@ for (let ind = 0; ind < numbers.length; ind++) {
 let max = 0;
 
 for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] > max) {
+    if ([i] > max) {
         max = numbers[i]
     }
-    console.log(max);
+    // console.log(max);
 }
 
+// afficher uniquement les nombres strictement supérieurs à 4 ==> 5, 12, 8 
 
+let filteredNumbers = []
+
+for (let n = 0; n < numbers.length; n++) {
+    if (numbers[n] > 5) {
+        filteredNumbers.push(numbers[n])
+    }
+}
+
+// console.log(filteredNumbers)
+
+// Encapsuler le script précédent dans une fonction et y ajouter le paramètre limit
+
+const arrayResult = filterArray(7)
+
+// console.log(arrayResult);
+
+function filterArray(limit) {
+    let filteredNumbers = []
+
+    for (let n = 0; n < numbers.length; n++) {
+        if (numbers[n] > limit) {
+            filteredNumbers.push(numbers[n])
+        }
+    }
+
+    console.log(filteredNumbers)
+    //return filteredNumbers;
+}
