@@ -137,7 +137,7 @@ function filterArray(limit) {
         }
     }
 
-    console.log(filteredNumbers)
+    // console.log(filteredNumbers)
     //return filteredNumbers;
 }
 
@@ -168,6 +168,99 @@ const persons = [{
 
 let sickPersons = []
 
-for () {
+for (let i = 0; i < persons.length; i++) {
+    if (persons[i].isSick) {
+        sickPersons.push(persons[i])
+    }
+}
 
+// console.log(sickPersons)
+
+// Difficulté supplémentaire, encapsuler la boucle dans une fonction et passer le tableau en paramètre
+
+const persons_2 = [{
+    name: "Pierre",
+    hasCar: true,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Mélanie",
+    hasCar: true,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Paul",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Sophie",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Paul",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Nathalie",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Laurence",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Adèle",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Stéphane",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Théa",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Paul",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Léo",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Romane",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Max",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}]
+
+const result = findSickPeople(persons_2)
+console.log(result);
+
+function findSickPeople(arr) {
+    let sickPersons = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].isSick) {
+            sickPersons.push(arr[i])
+        }
+    }
+
+    return sickPersons;
 }
