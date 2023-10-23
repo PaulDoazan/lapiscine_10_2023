@@ -140,3 +140,34 @@ function filterArray(limit) {
     console.log(filteredNumbers)
     //return filteredNumbers;
 }
+
+
+// Ecrire une boucle for pour afficher dans un nouveau tableau toutes les personnes malades (isSick == true)
+
+const persons = [{
+    name: "Pierre",
+    hasCar: true,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Mélanie",
+    hasCar: true,
+    hasBike: false,
+    isSick: false
+}, {
+    name: "Paul",
+    hasCar: false,
+    hasBike: true,
+    isSick: true
+}, {
+    name: "Sophie",
+    hasCar: false,
+    hasBike: false,
+    isSick: false
+}]
+
+let sickPersons = []
+
+for () {
+
+}
