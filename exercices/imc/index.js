@@ -15,9 +15,10 @@ function onBtnClick() {
     if (checkError(height, weight)) {
         return
     }
-    const bmi = weight / height ** 2
+    // const bmi = Math.round((weight / height ** 2) * 100) / 100
+    const bmi = weight / (height * height)
 
-    resultIMC.textContent = bmi
+    resultIMC.textContent = bmi.toFixed(2)
 }
 
 function checkError(hParameter, wParameter) {
