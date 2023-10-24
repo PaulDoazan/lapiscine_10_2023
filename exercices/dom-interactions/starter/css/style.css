@@ -1,0 +1,169 @@
+:root {
+    --color1 : #434CE5;
+    --color2 : #000B09;
+    --color3 : #b5003f;
+    --color4 : #F5F5F5;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    background-color: var(--color4) ;
+}
+
+.h1-container {
+    height: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color2); 
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-weight: 300;
+}
+
+h1 span {
+    font-weight: 700;
+    position: relative;
+    z-index: 0;
+}
+
+h1 span::after {
+    content: "DOM";
+    position: absolute;
+    right: -3px;
+    top: 2px;
+    color: var(--color1);
+    z-index: -2;
+}
+h1 span::before {
+    content: "DOM";
+    position: absolute;
+    left: -3px;
+    top: -2px;
+    color: var(--color3);
+    z-index: -1;
+    mix-blend-mode: multiply;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    gap: 2.5vh;
+    padding: 3vh;
+}
+
+@media (min-width: 530px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 770px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        height: 93vh;
+    }
+}
+
+.exo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.065);
+    transition: all 0.2s ease;
+}
+
+.exo:hover {
+    transform: scale(1.015)
+}
+
+.div-to-color-1 {
+    background-color: red;
+}
+
+.btn, input, select {
+    margin: 10px;
+    padding: 12px 18px;
+    border-radius: 100px;
+    border: 0;
+    background-color: rgba(219, 219, 219, 0.137);
+    border: 1px solid rgb(219, 219, 219);
+    cursor: pointer;
+}
+
+.input-7 {
+    margin: 10px;
+    padding: 2px 8px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--color4);
+    border: 1px solid rgb(219, 219, 219);
+}
+
+.input-5 {
+    padding: 0;
+}
+
+.btn:hover, input:hover, select:hover {
+    border: 1px solid var(--color1);
+}
+
+input, select {
+    margin: 10px;
+}
+
+.colored {
+    margin: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.div-to-color-7 {
+    background-color: black;
+}
+
+.div-to-color-8 {
+    background-color: blue;
+}
+
+.text-to-display-9 {
+    margin-left: 20px;
+}
+
+.text-to-display {
+    font-weight: 500;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--color1);
+}
+
+.text-to-display-5 {
+    margin-top: 4vh;
+    font-size: 1.5rem;
+}
+
+.checkbox-container {
+    display: flex;
+    gap: 4vw
+}
