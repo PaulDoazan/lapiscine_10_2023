@@ -1,3 +1,11 @@
+const BMIData = [
+    { name: "Maigreur", color: "midnightblue", range: [0, 18.5] },
+    { name: "Bonne santé", color: "green", range: [18.5, 25] },
+    { name: "Surpoids", color: "lightcoral", range: [25, 30] },
+    { name: "Obésité modérée", color: "orange", range: [30, 35] },
+    { name: "Obésité sévère", color: "crimson", range: [35, 40] }
+];
+
 // 1 On récupère la balise html et on la stocke dans une variable en js
 const validationBtn = document.querySelector(".validation-btn")
 const resultIMC = document.querySelector('.bmi-value')
@@ -19,6 +27,7 @@ function onBtnClick() {
     const bmi = weight / (height * height)
 
     resultIMC.textContent = bmi.toFixed(2)
+    comment.textContent = "..."
 }
 
 function checkError(hParameter, wParameter) {
@@ -27,12 +36,10 @@ function checkError(hParameter, wParameter) {
     if ((!hParameter || hParameter < 0) && (!wParameter || wParameter < 0)) {
         comment.textContent = "Les valeurs saisies dans les champs poids ET taille sont incorrectes"
         return true
-    }
-    if (!wParameter || wParameter < 0) {
+    } else if (!wParameter || wParameter < 0) {
         comment.textContent = "La valeur saisie dans le champ poids est incorrecte"
         return true
-    }
-    if (!hParameter || hParameter < 0) {
+    } else if (!hParameter || hParameter < 0) {
         comment.textContent = "La valeur saisie dans le champ taille est incorrecte"
         return true
     }
