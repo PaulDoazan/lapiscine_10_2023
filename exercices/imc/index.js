@@ -12,7 +12,7 @@ function onBtnClick() {
     const weight = inputs[1].value
     // afficher dans la console l'IMC => poids en kg / taille en m ² ** 2
 
-    if (checkError()) {
+    if (checkError(height, weight)) {
         return
     }
     const bmi = weight / height ** 2
@@ -20,18 +20,18 @@ function onBtnClick() {
     resultIMC.textContent = bmi
 }
 
-function checkError() {
+function checkError(hParameter, wParameter) {
     // Implémenter la condition pour préciser le message d'erreur en fonction de la taille ou du poids
     // vérifier les données utilisateur, pas de valeurs <= 0
-    if ((!height || height < 0) && (!weight || weight < 0)) {
+    if ((!hParameter || hParameter < 0) && (!wParameter || wParameter < 0)) {
         comment.textContent = "Les valeurs saisies dans les champs poids ET taille sont incorrectes"
         return true
     }
-    if (!weight || weight < 0) {
+    if (!wParameter || wParameter < 0) {
         comment.textContent = "La valeur saisie dans le champ poids est incorrecte"
         return true
     }
-    if (!height || height < 0) {
+    if (!hParameter || hParameter < 0) {
         comment.textContent = "La valeur saisie dans le champ taille est incorrecte"
         return true
     }
