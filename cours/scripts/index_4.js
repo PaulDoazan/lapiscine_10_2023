@@ -27,13 +27,14 @@ for (let n = 0; n < words.length; n++) {
 
 }
 
-console.log(sentence)
+// console.log(sentence)
 
 
 // ------------------------
 
 
 const myTitle = document.querySelector(".my-title")
+const paragraphs = document.querySelectorAll(".my-paragraph")
 
 myTitle.addEventListener('click', onTitleClick)
 
@@ -67,11 +68,15 @@ function onTitleClick() {
     //     myTitle.style.color = "black"
     // }
 
-    colorIndex++
-    if (colorIndex == setsOfColors.length - 1) {
-        colorIndex = 0
-    }
-
     myTitle.style.backgroundColor = setsOfColors[colorIndex].bgColor
     myTitle.style.color = setsOfColors[colorIndex].textColor
+
+    for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.color = setsOfColors[colorIndex].textColor
+    }
+
+    colorIndex++
+    if (colorIndex == setsOfColors.length) {
+        colorIndex = 0
+    }
 }
