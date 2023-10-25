@@ -45,7 +45,7 @@ function getMaximum(arrParam) {
 const nbs = [7, 5, 3, 10] // => [7, 10]
 
 const nbsAbove = getNumbersAboveAverage(nbs)
-console.log(nbsAbove);
+// console.log(nbsAbove);
 
 function getNumbersAboveAverage(tab) {
     // 1. On calcule le total
@@ -125,18 +125,64 @@ const pizzas = [
 
 const pizzas2 = [
     {
-        name: '8 fromages',
+        name: '3 fromages',
         price: 10,
         ingredients: ['mozzarella', 'reblochon', 'gruyère', 'oignon', 'champignon'],
         baseTomate: false
     },
     {
-        name: '12 fromages',
+        name: '4 fromages',
         price: 18,
-        ingredients: ['mozzarella', 'chèvre', 'miel'],
+        ingredients: ['mozzarella', 'chèvre', 'miel', 'parmesan', 'roquefort'],
         baseTomate: false
     },
 ]
 
 // Ecrire une fonction qui prend en paramètre un tableau de pizzas, et qui retourne un tableau de tous les noms des pizzas
 
+const pizzasNames = getAllNames(pizzas)
+console.log(pizzasNames)
+
+function getAllNames(arr) {
+    let names = []
+
+    for (let i = 0; i < arr.length; i++) {
+        names.push(arr[i].name)
+    }
+
+    return names
+}
+
+// Ecrire une fonction qui prend en paramètre un tableau de pizzas et qui me retourne la moyenne des prix
+console.log(getAvgPrice(pizzas2))
+
+function getAvgPrice(arr) {
+    let total = 0
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i].price
+    }
+
+    console.log(total)
+
+    let avg = (total / arr.length).toFixed(2)
+    return avg
+}
+
+// Amélioration, la fonction renvoie un tableau des noms de pizzas dont le prix est supérieur à la moyenne
+console.log(getNamesAboveAvg(pizzas))
+
+function getNamesAboveAvg(arrPizzas) {
+    let avg = getAvgPrice(arrPizzas);
+
+    let namesAbove = []
+
+    for (let i = 0; i < arrPizzas.length; i++) {
+        if (arrPizzas[i].price > avg) {
+            namesAbove.push(arrPizzas[i].name)
+        }
+    }
+
+    return namesAbove;
+}
+
+// Ecrire une fonction qui prend 2 paramètres: le premier : un tableau de pizzas, le deuxième : un nom de pizza. La fonction retourne un tableau d'ingrédients de la pizza dont le nom est passé en paramètre. (getPizzaByName(pizzas, 'Margherita') ==> ['mozzarella', 'tomate', 'origan', 'jambon', 'champignons'])
