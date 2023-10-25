@@ -19,12 +19,15 @@ body {
 }
 
 .container {
+    color: var(--grey);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-h1 {
-    color: var(--grey);
+.result {
+    margin-top: 20px;
+    font-size: 24px;
 }
