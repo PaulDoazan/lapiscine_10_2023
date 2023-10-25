@@ -42,4 +42,4 @@ function getMaximum(arrParam) {
 
 // 3. Ecrire une fonction qui prend en paramètre un tableau de nombre et qui retourne un nouveau tableau de nombres qui seront tous supérieurs à la moyenne des nombres du tableau en paramètres. 
 
-const nbs = [3, 5, 10]
+const nbs = [3, 5, 10] // => [10]
