@@ -1,3 +1,7 @@
+/**
+ * REVISIONS
+ */
+
 let words = ['Salut', 'mon', 'ton', 'nom', 'est', 'Pierre']
 
 let sentence = ''
