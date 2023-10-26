@@ -54,7 +54,8 @@ for (let i = 0; i < inputs5.length; i++) {
 // inputs5[4].addEventListener('input', onInput5)
 // inputs5[5].addEventListener('input', onInput5)
 
-function onInput5(event) {
-    event.target
-    textToDisplay5.textContent = event.target.value
+function onInput5(e) {
+    // e.target ==>  input
+    textToDisplay5.textContent = e.target.value
 }
+
