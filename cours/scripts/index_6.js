@@ -95,16 +95,19 @@ const myTitle = document.querySelector('.my-title')
 
 myTitle.addEventListener('click', changeText)
 
-let clicked = false
+
+// let clicked = false
 function changeText() {
     // if (!clicked) {
     //     clicked = true
     // } else {
     //     clicked = false
     // }
-    clicked = !clicked
+    // clicked = !clicked
 
-    if (clicked) {
+    console.log(myTitle.classList)
+
+    if (!myTitle.classList.contains('text-changed')) {
         myTitle.classList.add('text-changed')
     } else {
         myTitle.classList.remove('text-changed')
