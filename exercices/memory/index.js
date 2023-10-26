@@ -2,13 +2,8 @@ const title = document.querySelector('.title')
 const cards = document.querySelectorAll('.card')
 
 for (let i = 0; i < cards.length; i++) {
-    ecrisUnePhrase(i)
     paramCard(cards[i], i)
     cards[i].addEventListener('click', onCardClick)
-}
-
-function ecrisUnePhrase(index) {
-    console.log('Ma phrase : ' + index)
 }
 
 function onCardClick(event) {
@@ -18,8 +13,15 @@ function onCardClick(event) {
     const tg = event.currentTarget
     if (tg.classList.contains('is-flipped')) {
         tg.classList.remove('is-flipped')
+        setTimeout(cardBack, 3000)
     } else {
         tg.classList.add('is-flipped')
+    }
+}
+
+function cardBack() {
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].classList.add('is-flipped')
     }
 }
 
