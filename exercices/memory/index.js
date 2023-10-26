@@ -2,10 +2,13 @@ const title = document.querySelector('.title')
 const cards = document.querySelectorAll('.card')
 
 for (let i = 0; i < cards.length; i++) {
-    console.log(cards[i].children)
-    cards[i].children[0].children[0].textContent = Math.round((i + 1) / 2)
-    cards[i].children[1].children[0].textContent = "?"
+    ecrisUnePhrase(i)
+    paramCard(cards[i], i)
     cards[i].addEventListener('click', onCardClick)
+}
+
+function ecrisUnePhrase(index) {
+    console.log('Ma phrase : ' + index)
 }
 
 function onCardClick(event) {
@@ -18,4 +21,10 @@ function onCardClick(event) {
     } else {
         tg.classList.add('is-flipped')
     }
+}
+
+function paramCard(card, index) {
+    card.style.order = (Math.random() * cards.length).toFixed()
+    card.children[0].children[0].textContent = ((index + 1) / 2).toFixed()
+    card.children[1].children[0].textContent = "?"
 }
