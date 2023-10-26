@@ -186,3 +186,21 @@ function getNamesAboveAvg(arrPizzas) {
 }
 
 // Ecrire une fonction qui prend 2 paramètres: le premier : un tableau de pizzas, le deuxième : un nom de pizza. La fonction retourne un tableau d'ingrédients de la pizza dont le nom est passé en paramètre. (getPizzaByName(pizzas, 'Margherita') ==> ['mozzarella', 'tomate', 'origan', 'jambon', 'champignons'])
+
+const ingredients = getIngredientsFromName(pizzas, 'Regina')
+console.log(ingredients);
+
+function getIngredientsFromName(arr, pizzaName) {
+    let ingredientsFounded = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name == pizzaName) {
+            ingredientsFounded = arr[i].ingredients
+            break
+        }
+    }
+
+    return ingredientsFounded
+}
+
+// Amélioration, la fonction prend en 2ème paramètre un tableau de noms de pizzas, et retourne un tableau des ingrédients COMMUNS à ces pizzas

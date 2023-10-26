@@ -28,6 +28,7 @@ function productNumbers(numbers) {
     // console.log(total)
 }
 
+
 /**
  * Révision sur la moyenne
  */
@@ -48,11 +49,11 @@ function getAverage(arr) {
 }
 
 const result = selectNumbersUnderAvg(examples)
-console.log(result)
+// console.log(result)
 
 function selectNumbersAboveAvg(array) {
     const moyenne = getAverage(array)
-    console.log(moyenne);
+    // console.log(moyenne);
 
     let selectedNumbers = []
 
@@ -77,4 +78,35 @@ function selectNumbersUnderAvg(array) {
     }
 
     return selectedNumbers
+}
+
+
+/**
+ * propriété classList
+ */
+
+const myTitle = document.querySelector('.my-title')
+
+// à éviter
+// myTitle.style.color = 'rgb(0, 0, 255)'
+// myTitle.style.backgroundColor = 'rgb(255, 0, 0)'
+// myTitle.style.borderRadius = '10px'
+// myTitle.style.padding = '5px'
+
+myTitle.addEventListener('click', changeText)
+
+let clicked = false
+function changeText() {
+    // if (!clicked) {
+    //     clicked = true
+    // } else {
+    //     clicked = false
+    // }
+    clicked = !clicked
+
+    if (clicked) {
+        myTitle.classList.add('text-changed')
+    } else {
+        myTitle.classList.remove('text-changed')
+    }
 }
