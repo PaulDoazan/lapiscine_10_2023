@@ -1,0 +1,165 @@
+:root {
+    --primaryColor: #1d2743;
+    --secondaryColor: rgb(255, 226, 215);
+    --tertiaryColor: #1d274344;
+    --white: rgb(255, 255, 255);
+    --img-width: 76.4vw;
+    --img-height: 50vh;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color: var(--secondaryColor);
+    padding: 10vh 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.landscape-slider-title {
+    font-family: "marseille", sans-serif;
+    font-weight: 500;
+    margin: 1rem 0 -85px 8.5vw;
+    font-size: 8rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    color: var(--primaryColor);
+    user-select: none;
+    position: relative;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.landscape-slider-title:hover {
+    letter-spacing: 10px;
+}
+
+.landscape-slider-title::before {
+    content: "Toulousain";
+    color: var(--secondaryColor);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    z-index: -1;
+}
+
+.slider-frame {
+    margin: 33px auto;
+    width: var(--img-width);
+    height: var(--img-height);
+}
+
+.slider-title-container {
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 60%, var(--primaryColor));
+}
+
+.slider-title {
+    margin-right: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: var(--white);
+    font-weight: lighter;
+    font-size: 1.8rem;
+    user-select: none;
+    text-align: end;
+    font-style: italic;
+}
+
+.slide-container {
+    position: absolute;
+}
+
+.slider-img {
+    width: var(--img-width);
+    height: var(--img-height);
+    object-fit: fill;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 2s;
+    user-select: none;
+}
+
+.slider-frame {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.slider-img-container {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    border: 6px solid var(--secondaryColor);
+    box-shadow: 12px 12px 0px var(--primaryColor);
+}
+
+.slider-btn-container {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.slider-btn-container svg {
+    height: 50px;
+    width: auto;
+    fill: #1d2743;
+    background-color: var(--secondaryColor);
+    border-radius: 100px;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+.slider-btn-container svg:hover {
+    transform: scale(1.15);
+}
+
+.slider-btn-left {
+    cursor: pointer;
+    padding: 30px;
+    transform: translate(-50%, -10%);
+}
+
+.slider-btn-right {
+    cursor: pointer;
+    padding: 30px;
+    transform: translate(50%, -10%);
+}
+
+.slider-legend-container {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+}
+
+.slider-legend {
+    color: white;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 22px;
+    padding: 8px 10px;
+    user-select: none;
+}
+
+.dots-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50px;
+    background-color: var(--primaryColor);
+    margin: 4px;
+    cursor: pointer;
+}

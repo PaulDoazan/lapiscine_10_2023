@@ -67,7 +67,31 @@ const pizzas2 = [
 
 // Ecrire une fonction qui prend en paramètre un tableau de pizzas, et qui retourne un tableau de tous les noms des pizzas, avec un forEach
 const pizzasNames = getAllNames(pizzas)
+console.log(pizzasNames);
 
-function getAllNames(pizzaArray) {
+function getAllNames(arr) {
+    let names = []
 
+    arr.forEach((el) => {
+        names.push(el.name)
+    })
+
+    return names
+}
+
+// Idem avec la fonction getAveragePrice
+console.log(getAvgPrice(pizzas));
+
+function getAvgPrice(arr) {
+    let total = 0
+    // for (let i = 0; i < arr.length; i++) {
+    //     total += arr[i].price
+    // }
+
+    arr.forEach((element) => {
+        total += element.price
+    })
+
+    let avg = (total / arr.length).toFixed(2)
+    return avg
 }
