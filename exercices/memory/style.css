@@ -32,6 +32,11 @@ body {
     transform: rotate(0deg);
 }
 
+.tries {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
 .scene {
     width: 500px;
     margin: 40px 0;
