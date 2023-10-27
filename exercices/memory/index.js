@@ -24,6 +24,7 @@ for (let i = 0; i < cards.length; i++) {
 }
 
 function onCardClick(event) {
+    console.log('click')
     /**
      * evet.target est l'élément html sur lequel l'utilisateur a cliqué, event.currentTarget est l'élément html sur lequel .addEventListener a été déclaré
      */
@@ -31,18 +32,30 @@ function onCardClick(event) {
     if (cardsRevealed.length <= 1) {
         tg.classList.remove('is-flipped')
         cardsRevealed.push(tg)
-    }
+        if (cardsRevealed.length == 2) {
+            // on implémente le test des valeurs identiques ou non
+            if (cardsRevealed[0].children[0].children[0].textContent == cardsRevealed[1].children[0].children[0].textContent) {
+                cardsRevealed[0].removeEventListener('click', onCardClick)
+                cardsRevealed[1].removeEventListener('click', onCardClick)
 
+                cardsRevealed = []
+            } else {
+                setTimeout(cardBack, 1000)
+                console.log('fail')
+            }
+        }
+    }
 }
 
-// function cardBack() {
-//     for (let i = 0; i < cards.length; i++) {
-//         cards[i].classList.add('is-flipped')
-//     }
-// }
+function cardBack() {
+    for (let i = 0; i < cardsRevealed.length; i++) {
+        cardsRevealed[i].classList.add('is-flipped')
+    }
+    cardsRevealed = []
+}
 
 function paramCard(card, index) {
-    card.style.order = (Math.random() * cards.length).toFixed()
+    // card.style.order = (Math.random() * cards.length).toFixed()
     card.children[0].children[0].textContent = ((index + 1) / 2).toFixed()
     card.children[1].children[0].textContent = "?"
 }
