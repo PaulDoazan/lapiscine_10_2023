@@ -31,10 +31,13 @@ function refresh(e) {
     if (e.key == " ") {
         e.preventDefault()
 
+        const delay = 100
         for (let i = 0; i < cards.length; i++) {
-            cards[i].classList.add('is-flipped')
-            setTimeout(resetCards, 1000)
+            setTimeout(function () {
+                cards[i].classList.add('is-flipped')
+            }, i * delay)
         }
+        setTimeout(resetCards, 1000 + cards.length * delay)
 
         numberTries = 0
         numberSuccess = 0
@@ -93,7 +96,7 @@ function cardBack() {
 }
 
 function paramCard(card, index) {
-    card.style.order = (Math.random() * cards.length).toFixed()
+    // card.style.order = (Math.random() * cards.length).toFixed()
     card.children[0].children[0].textContent = ((index + 1) / 2).toFixed()
     card.children[1].children[0].textContent = "?"
 }

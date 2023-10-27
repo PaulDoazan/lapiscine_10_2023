@@ -139,7 +139,6 @@ const pizzas2 = [
 ]
 
 // Ecrire une fonction qui prend en paramètre un tableau de pizzas, et qui retourne un tableau de tous les noms des pizzas
-
 const pizzasNames = getAllNames(pizzas)
 console.log(pizzasNames)
 

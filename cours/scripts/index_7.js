@@ -34,6 +34,30 @@ container.children[3].textContent = "3ème enfant"
 
 
 // Une fonction anonyme peut être directement déclarée au sein de la méthode addEventListener
-container.addEventListener('click', function (e) {
-    console.log(e.target, e.currentTarget)
+// container.addEventListener('click', function (e) {
+//     console.log(e.target, e.currentTarget)
+// })
+
+
+/**
+ * NOUVELLE NOTION : les fonctions fléchées, arrow function
+ */
+
+
+
+// container.addEventListener('click', myFunction)
+
+const myFunction = (param1, param2) => {
+    console.log(param1 + param2)
+}
+
+const arr = [2, 5, 3, 6]
+const arr2 = []
+
+arr.forEach((element) => {
+    let res = element + 2
+    arr2.push(res)
 })
+
+console.log(arr2)
+
