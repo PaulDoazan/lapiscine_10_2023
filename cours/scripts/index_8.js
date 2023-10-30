@@ -27,3 +27,16 @@ myTitle.addEventListener('click', onClick)
 * Exo sur les 3 boutons qui change la couleur du titre
  */
 
+const btns = document.querySelectorAll('.btn')
+
+// for (let i = 0; i < btns.length; i++) {
+//     btns[i].addEventListener('click', (e) => {
+//         console.log(e.currentTarget)
+//     })
+// }
+
+btns.forEach((element) => {
+    element.addEventListener('click', (e) => {
+        myTitle.style.color = e.currentTarget.getAttribute('data-color')
+    })
+})
