@@ -38,5 +38,13 @@ const btns = document.querySelectorAll('.btn')
 btns.forEach((element) => {
     element.addEventListener('click', (e) => {
         myTitle.style.color = e.currentTarget.getAttribute('data-color')
+        myTitle.style.backgroundColor = e.currentTarget.getAttribute('data-bg-color')
+
+        setTimeout(() => {
+            myTitle.style.color = myTitle.getAttribute('data-origin-color')
+            myTitle.style.backgroundColor = myTitle.getAttribute('data-origin-bg-color')
+        }, 2000)
     })
 })
+
+// Ajouter un atrtibut data-bg-color dans le .html, et l'utiliser en js pour changer le css
