@@ -1,7 +1,14 @@
 /**
  * EXO 1
  */
+const divToColor1 = document.querySelector('.div-to-color-1')
+const btns1 = document.querySelectorAll('.btn-1')
 
+btns1.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        divToColor1.style.backgroundColor = event.currentTarget.textContent
+    })
+})
 
 /**
  * EXO 2
@@ -59,3 +66,39 @@ function onInput5(e) {
     textToDisplay5.textContent = e.target.value
 }
 
+/**
+ * EXO 6
+ */
+const select6 = document.querySelector('.select-6')
+const textToDisplay6 = document.querySelector('.text-to-display-6')
+
+select6.addEventListener('change', (event) => {
+    const tg = event.currentTarget
+    // textToDisplay6.textContent = tg.options[tg.selectedIndex].text
+
+    textToDisplay6.textContent = tg.value
+})
+
+/**
+ * EXO 7
+ */
+const input7 = document.querySelector('.input-7')
+const divToColor7 = document.querySelector('.div-to-color-7')
+
+input7.addEventListener('input', (event) => {
+    divToColor7.style.backgroundColor = event.currentTarget.value
+})
+
+/**
+ * EXO 8
+ * 
+ */
+
+const divToColor8 = document.querySelector('.div-to-color-8')
+const btns8 = document.querySelectorAll('.btn-8')
+
+btns8.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+        divToColor8.style.backgroundColor = event.currentTarget.getAttribute('data-color')
+    })
+})

@@ -107,26 +107,33 @@ console.log(arrExamples.map(el => el * 10));
 let users = [
     {
         name: 'Paul',
-        role: 'user'
+        role: 'user',
+        hasCar: 2
     },
     {
         name: 'Rihab',
-        role: 'admin'
+        role: 'admin',
+        hasCar: "2"
     },
     {
         name: 'Laurian',
-        role: 'admin'
+        role: 'admin',
+        hasCar: 2
     },
     {
         name: 'Céline',
-        role: 'client'
+        role: 'client',
+        hasCar: "2"
     }
 ]
 
-let admins = users.filter(element => element.role == 'admin')
-
+let admins = users.filter(element => element.role === 'admin')
 console.log(admins)
 
 let numbers = [5, 9, 12, 1, 7, 15]
+let multipleOfThree = numbers.filter(el => el % 3 === 0)
+console.log(multipleOfThree);
+// A l'aide de la méthode .filter, récupérons un nouveau tableau qui ne contient que les multiples de 3
 
-// A l'aide de la méthode .filter, récupérons un  nouveau tableau qui ne contient que les multiples de 3
+let userWithCar = users.filter(element => element.hasCar === 2)
+console.log(userWithCar)
