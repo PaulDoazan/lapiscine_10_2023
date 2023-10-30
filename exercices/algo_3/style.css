@@ -1,0 +1,33 @@
+:root {
+    --dark-blue: #394a51;
+    --soft-blue: #7fa99b;
+    --grey: #fbf2d5;
+    --red: #fdc57b;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background: linear-gradient(to right, var(--soft-blue), var(--dark-blue));
+}
+
+.container {
+    color: var(--grey);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+}
