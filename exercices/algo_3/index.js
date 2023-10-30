@@ -73,10 +73,10 @@ function createSentence() {
 
 }
 
-const dirs = getAllDirectors(movies)
-console.log(dirs)
+// const dirs = getAllDirectors(movies)
+console.log(movies.map(el => el.director))
 
-function getAllDirectors(films) {
+function getAllDirectors(arr) {
     // let directors = []
 
     // arr.forEach((element) => {
@@ -93,9 +93,40 @@ function getAllDirectors(films) {
 
     // return directors
 
-    return films.map((element) => element.director)
+    return arr.map((element) => element.director)
 }
 
 function getAllYears(arr) {
 
 }
+
+// A l'aide d'un .map(), logger un tableau qui aura pour valeur 30, 50, 90
+const arrExamples = [3, 5, 9]
+console.log(arrExamples.map(el => el * 10));
+
+let users = [
+    {
+        name: 'Paul',
+        role: 'user'
+    },
+    {
+        name: 'Rihab',
+        role: 'admin'
+    },
+    {
+        name: 'Laurian',
+        role: 'admin'
+    },
+    {
+        name: 'Céline',
+        role: 'client'
+    }
+]
+
+let admins = users.filter(element => element.role == 'admin')
+
+console.log(admins)
+
+let numbers = [5, 9, 12, 1, 7, 15]
+
+// A l'aide de la méthode .filter, récupérons un  nouveau tableau qui ne contient que les multiples de 3
