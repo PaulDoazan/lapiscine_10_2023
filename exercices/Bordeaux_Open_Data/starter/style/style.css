@@ -1,13 +1,13 @@
 :root {
-  --blue1 : #011f4b;
-  --blue2 : #d5e3f2;
-  --blue3 : #e7eff8;
-  --blue4 : #98a9bb;
-  --blue5 : #cad8e5;
+  --blue1: #011f4b;
+  --blue2: #d5e3f2;
+  --blue3: #e7eff8;
+  --blue4: #98a9bb;
+  --blue5: #cad8e5;
   --grey: #6e8cae;
   --red: #fc7472;
   --dark-red: #c64c4a;
-  --border-radius : 20px;
+  --border-radius: 20px;
   --min-width: 360px;
 }
 
@@ -118,8 +118,8 @@ button:hover {
   top: 2px;
   left: 2px;
   height: 6px;
-  width: 98%; 
-  transform : scaleX(0.01);
+  width: 98%;
+  transform: scaleX(0.4);
   transform-origin: left;
   transition: transform 3s ease-in-out;
   background-color: var(--blue5);
