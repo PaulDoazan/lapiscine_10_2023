@@ -25,3 +25,8 @@ const word = "Chaussettes"
 console.log(word.length)
 
 
+/**
+ * méthode .filter()
+ */
+
+// A l'aide de la méthode .filter, récupérer un nouveau tableau qui contient les mots de plus de 7 caractères
