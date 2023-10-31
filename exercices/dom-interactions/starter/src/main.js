@@ -102,3 +102,45 @@ btns8.forEach((btn) => {
         divToColor8.style.backgroundColor = event.currentTarget.getAttribute('data-color')
     })
 })
+
+
+/**
+ * EXO 9
+ */
+
+const checkboxes = document.querySelectorAll('.checkbox')
+const textToDisplay9 = document.querySelector('.text-to-display-9')
+
+/**
+ * OPERATEUR TERNAIRE, une condition if else écrite sur une ligne, pour affecter une même variable
+ */
+
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('click', (event) => {
+        let value1 = checkboxes[0].checked ? checkboxes[0].value : ''
+        let value2 = checkboxes[1].checked ? checkboxes[1].value : ''
+
+        textToDisplay9.textContent = `${value1} ${value2}`
+
+
+        // if (checkboxes[0].checked) {
+        //     value1 = checkboxes[0].value
+        // } else {
+        //     value1 = ''
+        // }
+
+        // if (checkboxes[1].checked) {
+        //     value2 = checkboxes[1].value
+        // } else {
+        //     value2 = ''
+        // }
+
+
+        // if (event.currentTarget.checked) {
+        //     textToDisplay9.textContent = event.currentTarget.value
+        // } else {
+        //     textToDisplay9.textContent = ''
+        // }
+
+    })
+})
