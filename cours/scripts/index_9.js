@@ -59,3 +59,80 @@ paragraphs.forEach((paragraph) => {
  */
 const title = document.querySelector('.my-title')
 title.addEventListener('click', () => console.log('click sur titre'))
+
+
+/**
+ * Nouvelle notion : Les Classes, instance de classe => Programmation Orienté Objet, POO
+ */
+
+const user = {
+    name: 'Paul',
+    username: 'pauldoazan',
+    age: 35,
+    admin: false
+}
+
+const user2 = {
+    name: 'Pierre',
+    username: 'pierredoazan',
+    age: 30,
+    admin: true
+}
+
+let user3 = createObject('Stephane', 'stehpanedurand', 20, true)
+
+function createObject(name, username, age, admin) {
+    return {
+        name: name,
+        username: username,
+        age: age,
+        admin: admin
+    }
+}
+
+class User {
+    constructor(nom, username, age, admin) {
+        this.n = nom
+        this.u = username
+        this.a = age
+        this.ad = admin
+    }
+}
+
+console.log(user3)
+
+let user4 = new User('Mathilde', 'Dupont', 40, false)
+let user5 = new User('Mathilde', 'Dupont', 40, false)
+let user6 = new User('Mathilde', 'Dupont', 40, false)
+
+class Pizza {
+    constructor(name, baseTomate, ingredients) {
+        this.name = name
+        this.baseTomate = baseTomate
+        this.ingredients = ingredients
+    }
+}
+
+const pizza1 = new Pizza('Margherita', true, ['tomate', 'mozza', 'olives'])
+
+pizza1.price = 23
+console.log(pizza1);
+
+class Rectangle {
+    constructor(w, h) {
+        this.width = w
+        this.height = h
+    }
+
+    superficy() {
+        return this.width * this.height
+    }
+}
+
+let rect1 = new Rectangle(50, 4)
+let rect2 = new Rectangle(20, 3)
+
+const superficy1 = rect1.superficy()
+const superficy2 = rect2.superficy()
+
+console.log(superficy1, superficy2)
