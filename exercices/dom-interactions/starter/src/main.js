@@ -26,6 +26,21 @@ function onInput3() {
 /**
  * EXO 3
  */
+const textToDisplay4 = document.querySelector('.text-to-display-4')
+const inputs4 = document.querySelectorAll('.input-4')
+
+inputs4.forEach((element) => {
+    element.addEventListener('input', () => {
+        // Affichage des dates dans le textContent
+        textToDisplay4.textContent = `${inputs4[0].value} - ${inputs4[1].value}`
+
+        let date1 = new Date(inputs4[0].value);
+        let date2 = new Date(inputs4[1].value);
+
+        textToDisplay4.textContent = `${(date2 - date1) / (1000 * 60 * 60 * 24)} jours`
+    })
+})
+
 
 /**
  * EXO 4
