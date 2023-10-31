@@ -1,0 +1,126 @@
+:root {
+  --blue1 : #011f4b;
+  --blue2 : #d5e3f2;
+  --blue3 : #e7eff8;
+  --blue4 : #98a9bb;
+  --blue5 : #cad8e5;
+  --grey: #6e8cae;
+  --red: #fc7472;
+  --dark-red: #c64c4a;
+  --border-radius : 20px;
+  --min-width: 360px;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: lato, Helvetica, sans-serif;
+  background: linear-gradient(to right, var(--blue5), var(--blue4));
+  padding: clamp(20px, 5vw, 50px) 20px 10px;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--blue1);
+}
+
+.main-interface {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: var(--min-width);
+}
+
+.places-container {
+  min-width: var(--min-width);
+  background: linear-gradient(to bottom, var(--blue3), var(--blue2));
+  padding: 30px;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+button {
+  width: 100px;
+  padding: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  background-color: var(--red);
+  color: var(--blue5);
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+.searching {
+  pointer-events: none;
+  background-color: var(--dark-red);
+}
+
+.searching:hover {
+  background-color: var(--dark-red);
+}
+
+button:hover {
+  background-color: var(--dark-red);
+}
+
+.errorMsg {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: red;
+}
+
+.place {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.place-infos {
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.diagram-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.capacity {
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  background-color: var(--grey);
+}
+
+.visitors {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 6px;
+  width: 98%; 
+  transform : scaleX(0.01);
+  transform-origin: left;
+  transition: transform 3s ease-in-out;
+  background-color: var(--blue5);
+}
