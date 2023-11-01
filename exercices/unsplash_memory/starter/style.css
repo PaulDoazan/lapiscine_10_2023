@@ -1,0 +1,112 @@
+:root {
+    --dark-blue: #394a51;
+    --soft-blue: #7fa99b;
+    --grey: #fbf2d5;
+    --red: #fdc57b;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    user-select: none;
+    font-family: 'Sometype Mono', monospace;
+    background: linear-gradient(to right, var(--soft-blue), var(--dark-blue));
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu {
+    position: absolute;
+    right: 0;
+    margin: 2rem;
+}
+
+form label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 3rem;
+    transform: rotate(0deg);
+}
+
+.tries {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.scene {
+    width: 500px;
+    margin: 40px 0;
+    perspective: 1000px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.card {
+    aspect-ratio: 1/1;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__face--front {
+    background: red;
+}
+
+.card__face--back {
+    background: blue;
+    transform: rotateY(180deg);
+}
