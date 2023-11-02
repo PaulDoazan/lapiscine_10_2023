@@ -35,21 +35,24 @@ function displayData(data) {
     imgContainer.textContent = ''
 
     // On créé un élément html en javascript
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 8; i++) {
         console.log(data.results[i])
         const newDiv = document.createElement("div")
         newDiv.style.position = "relative"
         const newImg = document.createElement("img")
         const title = document.createElement("h3")
-        newImg.style.position = "absolute"
+        // newImg.style.position = "absolute"
         title.style.position = "absolute"
         title.style.color = "white"
+        title.style.margin = '0.5rem'
+        title.style.opacity = 0.6
 
         title.textContent = data.results[i].alt_description
         // title.textContent = data.results[i]
         newImg.src = data.results[i].urls.regular
-        newDiv.appendChild(newImg)
+
         newDiv.appendChild(title)
+        newDiv.appendChild(newImg)
 
         imgContainer.appendChild(newDiv)
 
