@@ -4,6 +4,11 @@ import ACCESS_KEY from './config.js'
 const form = document.querySelector('.unsplash-search')
 const input = document.querySelector('#search')
 const imgContainer = document.querySelector('.img-container')
+const triesDiv = document.querySelector('.tries')
+
+let numberTries = 0
+let numberSuccess = 0
+let cardsRevealed = []
 
 // const targetImg = document.querySelector('.target-img')
 
@@ -35,8 +40,10 @@ function displayData(data) {
     imgContainer.textContent = ''
 
     // On créé un élément html en javascript
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 6; i++) {
         console.log(data.results[i])
+        createCard(data.results[i].urls.regular)
+        createCard(data.results[i].urls.regular)
         // const newDiv = document.createElement("div")
         // newDiv.style.position = "relative"
         // const newImg = document.createElement("img")
@@ -53,24 +60,71 @@ function displayData(data) {
 
         // newDiv.appendChild(title)
         // newDiv.appendChild(newImg)
+    }
 
-        const newDiv = document.createElement("div")
-        // is-flipped 
-        newDiv.className = "card"
-        newDiv.innerHTML = `
+    resetCards()
+}
+
+function createCard(url) {
+    const newDiv = document.createElement("div")
+    // is-flipped 
+    newDiv.className = "card"
+    newDiv.innerHTML = `
             <div class="card__face card__face--front">
-                <img src="${data.results[i].urls.regular}" alt="">
+                <img src="${url}" alt="">
             </div>
             <div class="card__face card__face--back">
                 <div class="card-text">?</div>  
             </div>
         `
-        imgContainer.appendChild(newDiv)
+    imgContainer.appendChild(newDiv)
+}
 
-        // const newImg2 = document.createElement("img")
-        // newImg2.src = data.results[i].urls.regular
-        // imgContainer.appendChild(newImg2)
+function resetCards() {
+    const cards = document.querySelectorAll('.card')
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].style.order = (Math.random() * cards.length).toFixed()
+        cards[i].addEventListener('click', onCardClick)
     }
+}
 
-    // récupérer la balise img et mettre à jour sa propriété src
+function onCardClick(event) {
+    /**
+     * evet.target est l'élément html sur lequel l'utilisateur a cliqué, event.currentTarget est l'élément html sur lequel .addEventListener a été déclaré
+     */
+    const tg = event.currentTarget
+    if (cardsRevealed.length <= 1 && tg.classList.contains('is-flipped')) {
+        tg.classList.remove('is-flipped')
+        cardsRevealed.push(tg)
+        if (cardsRevealed.length == 2) {
+            numberTries++
+            triesDiv.textContent = `Nombre de tentatives : ${numberTries}`
+            // on implémente le test des valeurs identiques ou non
+            if (cardsRevealed[0].children[0].children[0].textContent == cardsRevealed[1].children[0].children[0].textContent) {
+                cardsRevealed[0].removeEventListener('click', onCardClick)
+                cardsRevealed[1].removeEventListener('click', onCardClick)
+
+                cardsRevealed = []
+                check()
+                console.log('success')
+            } else {
+                setTimeout(cardBack, 1000)
+                console.log('fail')
+            }
+        }
+    }
+}
+
+function check() {
+    numberSuccess++
+    if (numberSuccess == cards.length / 2) {
+        triesDiv.textContent = `Bravo : ${numberTries} tentatives ! Tu peux recommencer en appuyant sur ESPACE.`
+    }
+}
+
+function cardBack() {
+    for (let i = 0; i < cardsRevealed.length; i++) {
+        cardsRevealed[i].classList.add('is-flipped')
+    }
+    cardsRevealed = []
 }
