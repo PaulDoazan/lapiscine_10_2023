@@ -1,28 +1,33 @@
 // 1ère étape : on déclare un eventListener sur le formulaire pour récupérer la valeur de l'input
 import ACCESS_KEY from './config.js'
 
-console.log()
-
 const form = document.querySelector('.unsplash-search')
 const input = document.querySelector('#search')
+const targetImg = document.querySelector('.target-img')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    console.log(input.value)
 
     fetchData()
 })
 
 async function fetchData() {
     try {
-        const response = await fetch(`https://api.unsplash.com/photos/?client_id=${ACCESS_KEY}`);
+        const response = await fetch(`https://api.unsplash.com/search/photos?query=${input.value}&client_id=${ACCESS_KEY}`);
 
         if (!response.ok) {
             throw new Error('Erreur')
         }
+
         const data = await response.json()
-        // displayData(data)
+        displayData(data)
     } catch (error) {
-        console.log('Une erreur est survenue')
+        console.log(error)
     }
+}
+
+function displayData(data) {
+    console.log(data)
+    targetImg.src = data.results[0].urls.regular
+    // récupérer la balise img et mettre à jour sa propriété src    
 }
