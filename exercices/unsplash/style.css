@@ -1,0 +1,22 @@
+:root {
+    --dark-blue: #394a51;
+    --soft-blue: #7fa99b;
+    --grey: #fbf2d5;
+    --red: #fdc57b;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, var(--soft-blue), var(--dark-blue));
+    padding: clamp(20px, 5vw, 50px) 10px 10px
+}
+
+.container {}
