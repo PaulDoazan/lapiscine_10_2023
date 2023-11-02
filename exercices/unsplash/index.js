@@ -3,7 +3,9 @@ import ACCESS_KEY from './config.js'
 
 const form = document.querySelector('.unsplash-search')
 const input = document.querySelector('#search')
-const targetImg = document.querySelector('.target-img')
+const imgContainer = document.querySelector('.img-container')
+
+// const targetImg = document.querySelector('.target-img')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -27,7 +29,34 @@ async function fetchData() {
 }
 
 function displayData(data) {
-    console.log(data)
-    targetImg.src = data.results[0].urls.regular
-    // récupérer la balise img et mettre à jour sa propriété src    
+    // targetImg.src = data.results[0].urls.regular
+
+    // On vide le container d'images
+    imgContainer.textContent = ''
+
+    // On créé un élément html en javascript
+    for (let i = 0; i < 4; i++) {
+        console.log(data.results[i])
+        const newDiv = document.createElement("div")
+        newDiv.style.position = "relative"
+        const newImg = document.createElement("img")
+        const title = document.createElement("h3")
+        newImg.style.position = "absolute"
+        title.style.position = "absolute"
+        title.style.color = "white"
+
+        title.textContent = data.results[i].alt_description
+        // title.textContent = data.results[i]
+        newImg.src = data.results[i].urls.regular
+        newDiv.appendChild(newImg)
+        newDiv.appendChild(title)
+
+        imgContainer.appendChild(newDiv)
+
+        // const newImg2 = document.createElement("img")
+        // newImg2.src = data.results[i].urls.regular
+        // imgContainer.appendChild(newImg2)
+    }
+
+    // récupérer la balise img et mettre à jour sa propriété src
 }
