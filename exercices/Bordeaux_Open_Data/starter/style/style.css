@@ -119,7 +119,7 @@ button:hover {
   left: 2px;
   height: 6px;
   width: 98%;
-  transform: scaleX(0.4);
+  transform: scaleX(0.01);
   transform-origin: left;
   transition: transform 3s ease-in-out;
   background-color: var(--blue5);
