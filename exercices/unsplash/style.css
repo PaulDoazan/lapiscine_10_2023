@@ -19,4 +19,28 @@ body {
     padding: clamp(20px, 5vw, 50px) 10px 10px
 }
 
-.container {}
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+form label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.3);
+}
